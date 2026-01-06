@@ -1946,13 +1946,21 @@ header.main-header .header-sticky.active {
 	font-family: var(--accent-font);
 	font-size: 16px;
 	margin-bottom: 5px;
+	white-space: nowrap;
 }
 
 .about-us-support-content h3 {
 	font-size: 24px;
+	white-space: nowrap;   /* 👈 aa ek line add karo */
 }
 
+<<<<<<< HEAD
 .our-company-history {
+=======
+
+
+.our-company-history{
+>>>>>>> 03c8fab6f7842b949aec261f9eef7bb559f866d3
 	padding: 100px 0;
 	background: var(--secondary-color);
 }
