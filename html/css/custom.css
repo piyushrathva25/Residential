@@ -1808,12 +1808,22 @@ header.main-header .header-sticky.active {
 	margin: 0 40px;
 	overflow: hidden;
 	border-radius: 40px;
-	background: url('../images/page-header-bg.jpg') no-repeat center center;
+	background: url('../images/kn_infinity.jpeg') no-repeat center center;
 	background-size: cover;
 	padding: 220px 0 120px;
 	position: relative;
 	margin-top: -103px;
 }
+
+@media (max-width: 768px){
+	.page-header{
+		margin: 0 15px;
+		padding: 160px 0 80px;   /* height adjust */
+		border-radius: 25px;
+		margin-top: -60px;
+	}
+}
+
 
 .page-header:before {
 	content: '';
@@ -2184,15 +2194,15 @@ header.main-header .header-sticky.active {
 	padding: 100px 0 70px;
 }
 
-.team-member-item {
-	border: 1px solid var(--divider-color);
-	border-radius: 40px;
-	height: calc(100% - 30px);
-	margin-bottom: 30px;
+.team-image{
 	overflow: hidden;
 }
 
 .team-member-item .team-image img {
+	width: 412px;
+	height: 380px;
+	object-fit: cover;
+	object-position: center 15%;  /* 👈 aa main fix */
 	border-radius: 40px 40px 0 0;
 	transition: all 0.5s ease-in-out;
 }
@@ -2200,6 +2210,7 @@ header.main-header .header-sticky.active {
 .team-member-item:hover .team-image img {
 	transform: scale(1.1);
 }
+
 
 .team-body {
 	padding: 30px;
@@ -3662,6 +3673,7 @@ header.main-header .header-sticky.active {
 	}
 
 	.footer-links h3 {
+		
 		font-size: 22px;
 		margin-bottom: 30px;
 	}
@@ -4356,6 +4368,7 @@ header.main-header .header-sticky.active {
 
 	.about-us-contact-support .icon-box img {
 		max-width: 35px;
+		
 	}
 
 	.about-us-support-content {
