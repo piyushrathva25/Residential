@@ -1945,11 +1945,15 @@ header.main-header .header-sticky.active{
 	font-family: var(--accent-font);
 	font-size: 16px;
 	margin-bottom: 5px;
+	white-space: nowrap;
 }
 
 .about-us-support-content h3{
 	font-size: 24px;
+	white-space: nowrap;   /* 👈 aa ek line add karo */
 }
+
+
 
 .our-company-history{
 	padding: 100px 0;
