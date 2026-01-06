@@ -928,6 +928,9 @@ header.main-header .header-sticky.active {
 .service-page .contact-us{
 	display: none;
 }
+.service-page .cta-box{
+	display: none;
+}
 .our-service {
 	background: var(--secondary-color) url("../images/our-service-bg.png") no-repeat;
 	background-position: right top;
@@ -2282,6 +2285,9 @@ header.main-header .header-sticky.active {
 .service-single-page .contact-us{
 	display: none;
 }
+.service-single-page .cta-box{
+	display: none;
+}
 .page-service {
 	padding: 100px 0 70px;
 }
@@ -3181,6 +3187,9 @@ header.main-header .header-sticky.active {
 /************************************/
 /***      24. FAQs Page css       ***/
 /************************************/
+.Faqs-page .contact-us{
+	display: none;
+}
 
 .page-faq {
 	padding: 100px 0;
