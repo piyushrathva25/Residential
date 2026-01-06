@@ -925,7 +925,9 @@ header.main-header .header-sticky.active {
 /************************************/
 /***     06. Our Services css	  ***/
 /************************************/
-
+.service-page .contact-us{
+	display: none;
+}
 .our-service {
 	background: var(--secondary-color) url("../images/our-service-bg.png") no-repeat;
 	background-position: right top;
@@ -1579,11 +1581,13 @@ header.main-header .header-sticky.active {
 /************************************/
 
 .contact-us {
+
 	background: var(--secondary-color) url("../images/contact-us-bg.png") no-repeat;
 	background-position: center center;
 	background-size: cover;
 	padding: 100px 0;
 }
+
 
 .contact-sidebar {
 	background: var(--primary-color);
@@ -1803,6 +1807,9 @@ header.main-header .header-sticky.active {
 /************************************/
 /***    15. About us Page css	  ***/
 /************************************/
+.about-page .contact-us{
+	display: none;
+}
 
 .page-header {
 	margin: 0 40px;
@@ -2272,7 +2279,9 @@ header.main-header .header-sticky.active {
 /************************************/
 /***    16. Services Page css	  ***/
 /************************************/
-
+.service-single-page .contact-us{
+	display: none;
+}
 .page-service {
 	padding: 100px 0 70px;
 }
@@ -2893,11 +2902,15 @@ header.main-header .header-sticky.active {
 .page-project {
 	padding: 100px 0;
 }
-
+.project-single-page .contact-us{
+	display: none;
+}
 /************************************/
 /***    21. Project Single css    ***/
 /************************************/
-
+.project-page .contact-us{
+	display: none;
+}
 .page-project-single {
 	padding: 100px 0;
 }
