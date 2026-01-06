@@ -1,77 +1,87 @@
 <?php
+error_reporting(0);
+header('Content-Type: text/plain');
 
-	$errorMSG = "";
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+	echo "POST only";
+	exit;
+}
 
-	// FullNAME
-	if (empty($_POST["fullname"])) {
-		$errorMSG = "Full Name is required. ";
-	} else {
-		$fullname = $_POST["fullname"];
-	}
+$errorMSG = "";
 
-	// EMAIL
-	if (empty($_POST["email"])) {
-		$errorMSG .= "Email is required. ";
-	} else {
-		$email = $_POST["email"];
-	}
+// ========================
+// GET FORM DATA
+// ========================
+$fullname = isset($_POST["fullname"]) ? trim($_POST["fullname"]) : "";
+$email    = isset($_POST["email"]) ? trim($_POST["email"]) : "";
+$phone    = isset($_POST["phone"]) ? trim($_POST["phone"]) : "";
+$subject  = isset($_POST["subject"]) ? trim($_POST["subject"]) : "";
+$message  = isset($_POST["message"]) ? trim($_POST["message"]) : "";
 
-	// PHONE
-	if (empty($_POST["phone"])) {
-		$errorMSG .= "Phone is required. ";
-	} else {
-		$phone = $_POST["phone"];
-	}
-	
-	// SUBJECT
-	if (empty($_POST["subject"])) {
-		$errorMSG .= "subject is required. ";
-	} else {
-		$subject = $_POST["subject"];
-	}
+// ========================
+// VALIDATION
+// ========================
+if ($fullname == "") $errorMSG .= "Full Name is required. ";
+if ($email == "")    $errorMSG .= "Email is required. ";
+if ($phone == "")    $errorMSG .= "Phone is required. ";
+if ($subject == "")  $errorMSG .= "Subject is required. ";
+if ($message == "")  $errorMSG .= "Message is required. ";
 
-	// MESSAGE
-	if (empty($_POST["message"])) {
-		$errorMSG .= "Message is required. ";
-	} else {
-		$message = $_POST["message"];
-	}
+if ($errorMSG != "") {
+	echo $errorMSG;
+	exit;
+}
 
-	$subject = 'Contact Inquiry from Seore Website';
+// ========================
+// ADMIN EMAIL (TESTING)
+// ========================
+$adminEmail = "awaikentechnology@gmail.com";
+$adminSubject = "New Contact Inquiry - BuiltUp";
 
-	//$EmailTo = "info@yourdomain.com"; // Replace with your email.
-    $EmailTo = "awaikentechnology@gmail.com";
-    
-	// prepare email body text
-	$Body = "";
-	$Body .= "fullname: ";
-	$Body .= $fullname;
-	$Body .= "\n";
-	$Body .= "Email: ";
-	$Body .= $email;
-	$Body .= "\n";
-	$Body .= "Phone: ";
-	$Body .= $phone;
-	$Body .= "\n";
-	$Body .= "subject: ";
-	$Body .= $subject;
-	$Body .= "\n";
-	$Body .= "Message: ";
-	$Body .= $message;
-	$Body .= "\n";
+$adminBody  = "NEW CONTACT INQUIRY\n\n";
+$adminBody .= "Full Name: $fullname\n";
+$adminBody .= "Email: $email\n";
+$adminBody .= "Phone: $phone\n";
+$adminBody .= "Subject: $subject\n";
+$adminBody .= "Message:\n$message\n";
 
-	// send email
-	$success = @mail($EmailTo, $subject, $Body, "From:".$email);
+$adminHeaders = "From: BuiltUp <noreply@localhost>";
 
-	// redirect to success page
-	if ($success && $errorMSG == ""){
-	   echo "success";
-	}else{
-		if($errorMSG == ""){
-			echo "Something went wrong :(";
-		} else {
-			echo $errorMSG;
-		}
-	}
+// ========================
+// USER CONFIRMATION EMAIL
+// ========================
+$userSubject = "Thank you for contacting BuiltUp";
 
-?>
+$userBody  = "Hello $fullname,\n\n";
+$userBody .= "Thank you for contacting us.\n";
+$userBody .= "We have received your inquiry and our team will contact you soon.\n\n";
+$userBody .= "----------------------\n";
+$userBody .= "Your Message:\n$message\n";
+$userBody .= "----------------------\n\n";
+$userBody .= "Regards,\nBuiltUp Team";
+
+$userHeaders = "From: BuiltUp <noreply@localhost>";
+
+// ========================
+// SEND MAIL (may fail on localhost)
+// ========================
+$adminMail = @mail($adminEmail, $adminSubject, $adminBody, $adminHeaders);
+$userMail  = @mail($email, $userSubject, $userBody, $userHeaders);
+
+// ========================
+// TESTING BACKUP (VERY IMPORTANT)
+// ========================
+// Agar mail() kaam na kare to bhi yeh file banegi
+file_put_contents(
+	"test-log.txt",
+	"----- NEW SUBMISSION -----\n" .
+		date("Y-m-d H:i:s") . "\n" .
+		$adminBody . "\n\n",
+	FILE_APPEND
+);
+
+// ========================
+// FINAL RESPONSE (AJAX)
+// ========================
+echo "success";
+exit;
