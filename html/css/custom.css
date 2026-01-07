@@ -4639,3 +4639,48 @@ header.main-header .header-sticky.active {
 	}
 	
 }
+
+
+
+
+/* new */
+/* reduce gap below status bar */
+.status-wrapper {
+  margin-bottom: 25px;   /* pehle 40–50px hato */
+}
+/* gap between header image and status bar */
+.page-header {
+  margin-bottom: 30px;   /* aa value adjust kari sako */
+}
+
+/* reduce top space of project section */
+.page-project {
+  padding-top:25px;     /* pehle zyada hato */
+}
+
+
+.status-row {
+  display: flex;
+  justify-content: center;   /* space-between remove */
+  align-items: center;
+  gap: 55px;                 /* aa value adjust kari sako */
+}
+
+
+.status-title {
+  white-space: nowrap;
+  padding-bottom: 6px;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  color: #000000;
+  border-bottom: 2px solid transparent;
+}
+
+.status-title.active {
+  border-bottom: 2px solid #000;
+  color: #000;
+}
+
+
