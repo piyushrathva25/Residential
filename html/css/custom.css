@@ -50,6 +50,8 @@
 	--error-color: rgb(230, 87, 87);
 	--default-font: "DM Sans", sans-serif;
 	--accent-font: "Manrope", sans-serif;
+	--primary-color: #0f2a44;
+	
 }
 
 /************************************/
@@ -561,18 +563,40 @@ header.main-header .header-sticky.active {
 
 .header-btn .btn-default {
 	padding: 20px 30px;
+    background: #2f2f2f;              /* GRAY */
+    color: #ffffff;             /* WHITE text */
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+	
+	
 }
 
 .header-btn .btn-default:hover {
-	color: var(--primary-color);
+	
+	 color: var(--primary-color); 
+	/* color: var(--white-color); */
 }
 
-.header-btn .btn-default::before {
+/* .header-btn .btn-default::before {
 	display: none;
-}
+} */
 
 .header-btn .btn-default::after {
-	background: var(--white-color);
+	content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--primary-color); /* blue */
+    z-index: 1;                       /* BELOW text */
+    transition: all 0.3s ease; /* BLUE on hover */
+
+} 
+/* TEXT ABOVE overlay */
+.header-btn .btn-default span,
+.header-btn .btn-default {
+    position: relative;
+    z-index: 3;
 }
 
 .main-menu ul li.highlighted-menu {
@@ -4149,6 +4173,7 @@ header.main-header .header-sticky.active {
 
 	.btn-default {
 		padding: 16px 50px 16px 20px;
+		
 	}
 
 	.btn-default::before {
@@ -4183,7 +4208,11 @@ header.main-header .header-sticky.active {
 	.hero-content-body .btn-default.btn-highlighted {
 		margin-left: 0px;
 		margin-top: 10px;
+		background: transparent; 
+		 
 	}
+	
+
 
 	.about-content-body ul {
 		padding: 15px;
