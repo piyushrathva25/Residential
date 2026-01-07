@@ -4737,33 +4737,36 @@ header.main-header .header-sticky.active {
 }
 
 .status-title.active {
-<<<<<<< HEAD
-  border-bottom: 2px solid #000;
-  color: #000;
+	<<<<<<< HEAD border-bottom: 2px solid #000;
+	color: #000;
 }
+
 .navbar-brand {
-    display: flex;
-    align-items: center; /* This aligns the icon and text vertically */
+	display: flex;
+	align-items: center;
+	/* This aligns the icon and text vertically */
 }
 
 .navbar-brand img {
-    max-height: 45px; /* Adjust height to match your header size */
-    width: auto;
+	max-height: 45px;
+	/* Adjust height to match your header size */
+	width: auto;
 }
 
 /* If you want the "KN" to be white and "Infinity" to be yellow like the example */
 .brand-text {
-    font-size: 1.5rem;
-    color: white;
-    margin-left: 10px;
+	font-size: 1.5rem;
+	color: white;
+	margin-left: 10px;
 }
 
 .brand-text span {
-    color: #ffb400; /* The yellow color from the second image */
+	color: #ffb400;
+	/* The yellow color from the second image */
 }
 
-=======
-	border-bottom: 2px solid #000;
-	color: #000;
+=======border-bottom: 2px solid #000;
+color: #000;
 }
->>>>>>> 36c3b2f5360f21faf3217176075ef0f38ed3f7de
+
+>>>>>>>36c3b2f5360f21faf3217176075ef0f38ed3f7de
