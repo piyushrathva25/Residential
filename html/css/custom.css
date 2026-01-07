@@ -1705,9 +1705,10 @@ header.main-header .header-sticky.active {
 }
 
 .footer-links h3 {
+    color: #ffc107;
 	font-size: 24px;
 	font-weight: 700;
-	color: var(--accent-color);
+	
 	text-transform: capitalize;
 	margin-bottom: 40px;
 }
@@ -1836,6 +1837,19 @@ header.main-header .header-sticky.active {
 /************************************/
 .about-page .contact-us{
 	display: none;
+}
+.intro-video-box {
+    height: 500px;
+}
+
+.video-image,
+.video-image video {
+    width: 100%;
+    height: 100%;
+}
+
+.video-image video {
+    object-fit: cover;
 }
 
 .page-header {
@@ -2310,6 +2324,9 @@ header.main-header .header-sticky.active {
 	display: none;
 }
 .service-single-page .cta-box{
+	display: none;
+}
+.service-single-page .our-faqs{
 	display: none;
 }
 .page-service {
