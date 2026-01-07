@@ -1681,9 +1681,10 @@ header.main-header .header-sticky.active {
 }
 
 .footer-links h3 {
+    color: #ffc107;
 	font-size: 24px;
 	font-weight: 700;
-	color: var(--accent-color);
+	
 	text-transform: capitalize;
 	margin-bottom: 40px;
 }
