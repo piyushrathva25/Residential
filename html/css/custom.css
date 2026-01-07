@@ -1921,7 +1921,7 @@ header.main-header .header-sticky.active {
 }
 
 .page-header-box ol li.breadcrumb-item.active {
-	color: var(--accent-color);
+	color: white;
 }
 
 .page-header-box ol .breadcrumb-item+.breadcrumb-item::before {
