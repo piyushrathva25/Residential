@@ -139,91 +139,40 @@
         </div>
     </div>
 
-    <!-- Page Project Start -->
-    <div class="page-project">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <!-- Project Item Start -->
-                    <div class="project-item wow fadeInUp" data-status="completed" data-wow-delay="0.25s">
-                        <!-- Project Image Start -->
-                        <div class="project-image" data-cursor-text="View">
-                            <a href="#">
-                                <figure>
-                                    <img src="images/KN_infi.jpg" alt>
-                                </figure>
-                            </a>
-                        </div>
-                        <!-- Project Image End -->
+   <!-- Page Project Start -->
+<div class="page-project">
+  <div class="container">
+    <div class="row">
 
-                        <!-- Project Body Start -->
-                        <div class="project-body">
-                            <!-- Project Body Title Start -->
-                            <div class="project-body-title">
-                                <h3>KN infinity</h3>
-                            </div>
-                            <!-- Project Body Title End -->
-
-                            <!-- Project Content Start -->
-                            <div class="project-content">
-                                <p>KN Infinity is a trusted and growing name in the real estate industry, known for
-                                    delivering quality-driven residential and commercial projects</p>
-                                <div class="project-content-footer">
-                                    <a href="KN_infinity_details.html" class="readmore-btn">view
-                                        more</a>
-                                </div>
-                            </div>
-                            <!-- Project Content End -->
-                        </div>
-                        <!-- Project Body End -->
-                    </div>
-                    <!-- Project Item End -->
-                </div>
-            </div>
+      <!-- COMPLETED PROJECT -->
+      <div class="col-lg-4 col-md-6 project-col">
+        <div class="project-item wow fadeInUp" data-status="completed">
+          <div class="project-image">
+            <img src="images/KN_infi.jpg" alt>
+          </div>
+          <div class="project-body">
+            <h3>KN Infinity</h3>
+          </div>
         </div>
-        <!-- Page Project End -->
+      </div>
 
-
-        <div class="page-project">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-4 col-md-6">
-                        <!-- Project Item Start -->
-                        <div class="project-item wow fadeInUp" data-status="upcoming" data-wow-delay="0.25s">
-
-                            <!-- Project Image Start -->
-                            <div class="project-image" data-cursor-text="View">
-                                <a href="#">
-                                    <figure>
-                                        <img src="images/KN_infi.jpg" alt>
-                                    </figure>
-                                </a>
-                            </div>
-                            <!-- Project Image End -->
-
-                            <!-- Project Body Start -->
-                            <div class="project-body">
-                                <div class="project-body-title">
-                                    <h3>KN Infinity (Upcoming)</h3>
-                                </div>
-
-                                <div class="project-content">
-                                    <p>This is an upcoming project. Click UPCOMING tab to test filter.</p>
-                                    <div class="project-content-footer">
-                                        <a href="#" class="readmore-btn">view more</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Project Body End -->
-
-                        </div>
-                        <!-- Project Item End -->
-                    </div>
-
-                </div>
-            </div>
+      <!-- UPCOMING PROJECT -->
+      <div class="col-lg-4 col-md-6 project-col">
+        <div class="project-item wow fadeInUp" data-status="upcoming">
+          <div class="project-image">
+            <img src="images/KN_infi.jpg" alt>
+          </div>
+          <div class="project-body">
+            <h3>KN Infinity (Upcoming)</h3>
+          </div>
         </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- Page Project End -->
+
 
         <!-- Contact Us Section Start -->
         <div class="contact-us">
@@ -459,30 +408,40 @@
   const statusTitles = document.querySelectorAll(".status-title");
   const projects = document.querySelectorAll(".project-item");
 
+  function applyFilter(filter) {
+    projects.forEach(project => {
+      const col = project.closest(".project-col");
+
+      if (filter === "all") {
+        col.style.display = "block";
+      } else {
+        col.style.display =
+          project.dataset.status === filter ? "block" : "none";
+      }
+    });
+  }
+
   statusTitles.forEach(title => {
     title.addEventListener("click", () => {
 
       statusTitles.forEach(t => t.classList.remove("active"));
       title.classList.add("active");
 
-      const filter = title.getAttribute("data-filter");
-
-      projects.forEach(project => {
-        const col = project.closest(".col-lg-4");
-
-        if (filter === "all") {
-          col.style.display = "block";
-        } else {
-          if (project.getAttribute("data-status") === filter) {
-            col.style.display = "block";
-          } else {
-            col.style.display = "none";
-          }
-        }
-      });
+      const filter = title.dataset.filter;
+      applyFilter(filter);
     });
   });
+
+  /* 🔥 APPLY DEFAULT FILTER ON PAGE LOAD */
+  document.addEventListener("DOMContentLoaded", () => {
+    const activeTab = document.querySelector(".status-title.active");
+    if (activeTab) {
+      applyFilter(activeTab.dataset.filter);
+    }
+  });
 </script>
+
+
 
         <!-- Jquery Library File -->
         <script src="js/jquery-3.7.1.min.js"></script>
