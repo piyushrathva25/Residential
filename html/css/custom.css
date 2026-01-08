@@ -2510,6 +2510,7 @@ header.main-header .header-sticky.active {
 
 .cta-contact-info .cta-contact-item .cta-contact-content {
 	width: calc(100% - 47px);
+	
 }
 
 .cta-contact-info .cta-contact-item .cta-contact-content p {
@@ -4749,7 +4750,7 @@ header.main-header .header-sticky.active {
 }
 
 .status-title.active {
-	 border-bottom: 2px solid #000;
+	border-bottom: 2px solid #000;
 	color: #000;
 }
 .simple-upcoming-text {
@@ -4788,6 +4789,7 @@ header.main-header .header-sticky.active {
 .brand-text span {
 	color: #ffb400;
 	/* The yellow color from the second image */
+<<<<<<< HEAD
 }
 /* Ensure completed title is always visible */
 .completed-card {
@@ -4811,3 +4813,6 @@ header.main-header .header-sticky.active {
   color: #000;
   margin: 0;
 }
+=======
+}
+>>>>>>> 33582d5746f99e699d0e7b2ee5b4c082da3d2061
