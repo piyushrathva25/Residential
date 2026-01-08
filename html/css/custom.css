@@ -4814,40 +4814,43 @@ header.main-header .header-sticky.active {
 }
 
 
-
-/* ===== FOOTER HOVER DISABLE ===== */
-
-/* Footer links */
-.main-footer a,
-.main-footer a:hover,
-.main-footer a:focus,
-.main-footer a:active {
+/* Footer links always visible */
+.main-footer ul li a {
   color: #ffffff !important;
-  text-decoration: none;
+  opacity: 1 !important;
+  position: relative;
+  z-index: 2;
 }
 
-/* Footer headings (Our Services, Company, Contact Us) */
-.main-footer h3,
-.main-footer h3:hover {
-  color: #ffc107 !important;
-}
-
-/* Footer icons (arrow, phone, mail, location) */
-.main-footer i,
-.main-footer i:hover,
-.main-footer svg,
-.main-footer svg:hover {
-  color: #ffc107 !important;
-  fill: #ffc107 !important;
-}
-
-/* List item hover block */
+/* Hover effect without color change */
 .main-footer ul li:hover a {
   color: #ffffff !important;
 }
 
-/* Disable background / transform effects if any */
-.main-footer a:hover {
-  background: none !important;
-  transform: none !important;
+/* Arrow / icon visible */
+.main-footer ul li i {
+  color: #ffc107 !important;
+  opacity: 1 !important;
+  transition: transform 0.3s ease;
+}
+
+/* Arrow move effect */
+.main-footer ul li:hover i {
+  transform: translateX(6px);
+}
+
+/* Underline effect */
+.main-footer ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background-color: #ffc107;
+  transition: width 0.3s ease;
+}
+
+.main-footer ul li:hover a::after {
+  width: 100%;
 }
