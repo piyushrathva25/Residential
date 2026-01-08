@@ -3211,7 +3211,7 @@ header.main-header .header-sticky.active {
 .contact-social-list h3 {
 	font-size: 24px;
 	font-weight: 700;
-	color: var(--white-color);
+	color: #ffc107;
 	text-transform: capitalize;
 	margin-bottom: 30px;
 }
@@ -3234,8 +3234,9 @@ header.main-header .header-sticky.active {
 
 .contact-social-list ul li a {
 	background-color: transparent;
-	color: var(--accent-color);
-	border: 2px solid var(--accent-color);
+	color: #ffc107;
+	border: 2px solid #ffc107;
+
 	height: 36px;
 	width: 36px;
 	border-radius: 100%;
