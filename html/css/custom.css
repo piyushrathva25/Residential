@@ -4812,3 +4812,42 @@ header.main-header .header-sticky.active {
   color: #000;
   margin: 0;
 }
+
+
+
+/* ===== FOOTER HOVER DISABLE ===== */
+
+/* Footer links */
+.main-footer a,
+.main-footer a:hover,
+.main-footer a:focus,
+.main-footer a:active {
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+/* Footer headings (Our Services, Company, Contact Us) */
+.main-footer h3,
+.main-footer h3:hover {
+  color: #ffc107 !important;
+}
+
+/* Footer icons (arrow, phone, mail, location) */
+.main-footer i,
+.main-footer i:hover,
+.main-footer svg,
+.main-footer svg:hover {
+  color: #ffc107 !important;
+  fill: #ffc107 !important;
+}
+
+/* List item hover block */
+.main-footer ul li:hover a {
+  color: #ffffff !important;
+}
+
+/* Disable background / transform effects if any */
+.main-footer a:hover {
+  background: none !important;
+  transform: none !important;
+}
