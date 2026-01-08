@@ -4698,6 +4698,17 @@ header.main-header .header-sticky.active {
 
 /* new */
 /* reduce gap below status bar */
+
+.project-count-text {
+  width: 100%;
+  text-align: center;
+  font-size: 37px;
+  font-weight: 600;
+  color: #000;
+  margin: 40px 0;
+}
+
+
 .status-wrapper {
 	margin-bottom: 25px;
 	/* pehle 40–50px hato */
@@ -4741,6 +4752,19 @@ header.main-header .header-sticky.active {
 	 border-bottom: 2px solid #000;
 	color: #000;
 }
+.simple-upcoming-text {
+  width: 100%;
+  height: 200px;          /* card height */
+  display: flex;
+  align-items: center;    /* vertical center */
+  justify-content: center;/* horizontal center */
+  font-size: 47px;
+  font-weight: 600;
+  color: #000;
+  text-align: center;
+}
+
+
 
 .navbar-brand {
 	display: flex;
@@ -4764,4 +4788,26 @@ header.main-header .header-sticky.active {
 .brand-text span {
 	color: #ffb400;
 	/* The yellow color from the second image */
+}
+/* Ensure completed title is always visible */
+.completed-card {
+  overflow: visible;           /* stop clipping */
+}
+
+/* Remove hover/overlay behaviour */
+.completed-body {
+  position: static;            /* no absolute overlay */
+  opacity: 1 !important;       /* force visible */
+  transform: none !important;  /* cancel animation transforms */
+  background: transparent;
+  padding-top: 12px;
+  text-align: center;
+}
+
+/* Title styling */
+.completed-title {
+  font-size: 30px;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
 }
