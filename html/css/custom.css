@@ -1926,7 +1926,16 @@ header.main-header .header-sticky.active {
 	position: relative;
 	margin-top: -103px;
 }
-
+.page-headerkis {
+	margin: 0 40px;
+	overflow: hidden;
+	border-radius: 40px;
+	background: url('../images/no_image.jpg') no-repeat center center;
+	background-size: cover;
+	padding: 220px 0 120px;
+	position: relative;
+	margin-top: -103px;
+}
 .page-headerks {
 	margin: 0 40px;
 	overflow: hidden;
